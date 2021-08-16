@@ -15,12 +15,23 @@
  */
 
 
+// Set your own initial variables
+$dark-green: #669966;
+$purple: #666699;
+
+// Set the derived variables
+$info: $dark-green;
+$dark: $purple;
+
+// Import Bulma
  @import "bulma";
 
  .navbar-brand .title{
      color: white;
 
  }
+
+
 
  // round images
 

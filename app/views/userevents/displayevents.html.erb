@@ -1,0 +1,11 @@
+
+<p id="notice"><%= notice %></p>
+<%@events.each do |event| %>
+<p>
+  <%= event.location %>
+</p>
+<p>
+  <%= event.created_at %>
+</p>
+<br>
+<% end %>

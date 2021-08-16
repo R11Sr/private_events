@@ -1,9 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+<div class="section">
+    <div class="container">
+        <div class="column is-centered">
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+            <div class="column is-two-fifths is-offset-one-quarter">
+                <h2 class="title is-1">Event Details</h2>
+                
+                <p>
+                  <strong>Location:</strong>
+                  <%= @event.location %>
+                </p>
+
+                <%= link_to 'Edit', edit_event_path(@event) %> |
+                <%= link_to 'Back', events_path %>
+            </div>
+        </div>
+    </div>
+</div>
+

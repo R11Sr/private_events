@@ -1,27 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="section">
+    <div class="container">
+        <div class="column is-centered">
 
-<table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <div class="column is-8 is-offset-2">
+                <h2 class="title is-1">Events</h2>
+                
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.location %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                <h1>Events</h1>
 
-<br>
+                <table class ='table is-striped is-bordered is-full'>
+                  <thead>
+                    <tr>
+                      <th>Location</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
 
-<%= link_to 'New Event', new_event_path %>
+                  <tbody>
+                    <% @events.each do |event| %>
+                      <tr>
+                        <td><%= event.location %></td>
+                        <td><%= link_to 'Show', event %></td>
+                        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+
+                <br>
+
+                <%= link_to 'New Event', new_event_path %>
+            </div>
+        </div>
+    </div>
+</div>
