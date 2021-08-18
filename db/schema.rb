@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_181914) do
+ActiveRecord::Schema.define(version: 2021_08_18_032000) do
+
+  create_table "event_mangers", force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "attendee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attendee_id"], name: "index_event_mangers_on_attendee_id"
+    t.index ["event_id"], name: "index_event_mangers_on_event_id"
+  end
 
   create_table "events", force: :cascade do |t|
-    t.string "location"
-    t.date "date"
+    t.string "location", null: false
+    t.date "date", null: false
     t.integer "creator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,17 +34,16 @@ ActiveRecord::Schema.define(version: 2021_08_10_181914) do
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "event_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["event_id"], name: "index_users_on_event_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_mangers", "events"
+  add_foreign_key "event_mangers", "users", column: "attendee_id"
   add_foreign_key "events", "users", column: "creator_id"
-  add_foreign_key "users", "events"
 end

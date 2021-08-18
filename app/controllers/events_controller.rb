@@ -23,7 +23,7 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = current_user.events.build(event_params) # User creates events
+    @event = current_user.hostedevents.build(event_params) # User creates events
 
     respond_to do |format|
       if @event.save

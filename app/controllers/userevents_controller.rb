@@ -5,5 +5,9 @@ class UsereventsController < ApplicationController
     def displayevents
         @events = current_user.events
     end 
+
+    def allUsers
+        @userList = User.all
+    end
 end
 
