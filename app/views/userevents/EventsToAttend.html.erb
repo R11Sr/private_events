@@ -1,6 +1,5 @@
-
 <p id="notice"><%= notice %></p>
-<%@events.each do |event| %>
+<%@AllEvents.each do |event| %>
 <p>
   <%= event.location %>
 </p>
@@ -9,5 +8,7 @@
 </p>
 <br>
 
-<%= link_to 'Invite ', users_all_path %>
+<%= link_to 'Invite', users_attend_path%>
+
+
 <% end %>

@@ -1,0 +1,64 @@
+<div class="section">
+    <div class="container">
+        <div class="column is-centered">
+            <%# <div class="column is-8 is-offset-2"> %>
+            
+                <h2 class="title is-1"> Events to come</h2>
+
+                <div class="tile is-ancestor">
+                    <%@invitedEvents.each do |invitedEvent| %>
+                        <% if invitedEvent.date >= Date.today %>
+                          
+                            <div class="tile is-parent">
+                                <div class="tile is-child box notification is-info">
+                                
+                                    <p class = 'subtitle'>
+                                    Location: <%= invitedEvent.location %>
+                                    </p>
+                                    <p>
+                                    Date: <%= invitedEvent.date %>
+                                    </p>
+                                    <br>
+
+                                    <p>
+                                    <%= link_to 'Event Details', event_path(invitedEvent) %>
+                                    </p>
+                                    <br>
+                                </div>
+                            </div> 
+                        <% end %>
+
+                    <% end %>
+                </div>
+                
+                <h2 class="title is-1">Events already gone</h2>
+
+                <div class="tile is-ancestor">
+                    <%@invitedEvents.each do |invitedEvent| %>
+                        <% if invitedEvent.date < Date.today %>
+                          
+                            <div class="tile is-parent">
+                                <div class="tile is-child box notification is-info">
+                                
+                                    <p class = 'subtitle'>
+                                    Location: <%= invitedEvent.location %>
+                                    </p>
+                                    <p>
+                                    Date: <%= invitedEvent.date %>
+                                    </p>
+                                    <br>
+
+                                    <p>
+                                    <%= link_to 'Event Details', event_path(invitedEvent) %>
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>                        
+                        <% end %>
+                    <% end %>
+                </div>
+                    <%= link_to 'Home', root_path %>
+            <%# </div> %>
+        </div>
+    </div>
+</div>

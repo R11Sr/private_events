@@ -40,15 +40,19 @@
 
               <% if user_signed_in? %>
               <p class="control">              
-              <%= link_to 'New Event',root_path, class: 'button is-dark'%>
+              <%= link_to 'New Event',new_event_path, class: 'button is-dark'%>
               </p>
                 <p class="control">
                   <%# Ensure to always check if user is signed in 1st %>
                   <%= link_to "#{current_user.name}'s Info", edit_user_registration_path, class: 'button is-dark'%>
                 </p>
+                
+                <p class="control">
+                  <%= link_to "#{current_user.name}'s Invited Events", users_invitedevents_path, class: 'button is-dark' %>
+                </p>
 
                 <p class="control">
-                  <%= link_to "#{current_user.name}'s Events",  users_events_path, class: 'button is-dark' %>
+                  <%= link_to "#{current_user.name}'s Hosted Events",  users_events_path, class: 'button is-dark' %>
                 </p>
 
                 <p class="control">

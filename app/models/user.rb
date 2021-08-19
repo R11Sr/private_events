@@ -8,10 +8,8 @@ class User < ApplicationRecord
   has_many :hostedevents, foreign_key: :creator_id, class_name: 'Event'
 
   #Attendee
-  # belongs_to :event, optional: true
-
-  has_many :event_mangers, foreign_key: 'attendee_id'
-  has_many :events, through: :event_mangers
+  has_many :Invites, foreign_key: 'attendee_id'
+  has_many :events, through: :Invites
 
 
 end
