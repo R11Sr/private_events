@@ -2,8 +2,9 @@
     <div class="container">
         <div class="column is-centered">
             <%# <div class="column is-8 is-offset-2"> %>
+                <h2 class="title is-1">Invited Events</h2>
             
-                <h2 class="title is-1"> Events to come</h2>
+                <h2 class="title is-3"> Events to come</h2>
 
                 <div class="tile is-ancestor">
                     <%@invitedEvents.each do |invitedEvent| %>
@@ -31,7 +32,7 @@
                     <% end %>
                 </div>
                 
-                <h2 class="title is-1">Events already gone</h2>
+                <h2 class="title is-3">Events already gone</h2>
 
                 <div class="tile is-ancestor">
                     <%@invitedEvents.each do |invitedEvent| %>
