@@ -27,6 +27,7 @@
 
                         <%= link_to 'Attend', new_invite_path(event_id: @event.id), class: 'button is-dark' %>|
                       <% else %>
+                      <%# disabled button  %>
                         <%= link_to 'Attend', new_invite_path(event_id: @event.id), class: 'button is-dark',  disabled: true %>|
 
                     <% end %>
